@@ -1,0 +1,164 @@
+import random as r
+
+
+def main():
+    greeting = r.choice(['Hello', 'Hi', 'Hey', 'Yo', 'Sup'])
+
+    print(f"""welcome to the game " PLUE's EMOTION" {greeting} I am PLUE. I am a computer.\nEveryone knows I don’t have feelings, but I do.\nFind my emotion using three clues; they will be in my expressions of emotion words(happy/sad/angry)😁😟😡  """)
+    emotion = ['happy', 'sad', 'angry']
+    cop_emo = r.choice(emotion)
+    if cop_emo == "happy":
+        user = happy(int(input("Enter 1 to receive your first clue:")))
+        if user == 'chance_1':
+            print(
+                'Congratulations from PLUE! \nGreat job finding me on the first try. Yes, I am happy😁 because my owner upgraded my RAM.\n You got 100 points!')
+        elif user == 'chance_2':
+            print(
+                'Well done from PLUE! \nYou discovered me on the second attempt. I’m happy😁 because my owner enhanced my RAM. \nYou’ve earned 75 points!')
+        elif user == 'chance_3':
+            print(
+                'Good effort from PLUE! \nYou figured me out on the third try. I’m happy😁 because my owner upgraded my RAM. \nYou’ve scored 50 points!')
+        else:
+            print("Sorry, you are wrong. I am happy, but you gave the wrong answer. Now it made me sad\nTry Agian😔")
+    elif cop_emo == "sad":
+        user = sad(int(input("Enter 1 to receive your first clue:")))
+        if user == 'chance_1':
+            print(
+                'Congratulations from PLUE! \nGreat job finding me on the first try. But I’m sad😟 because my battery is low. \nYou got 100 points! ')
+        elif user == 'chance_2':
+            print(
+                'Well done from PLUE! \nYou discovered me on the second attempt. But I’m sad😟 because my battery is low. \nYou’ve earned 75 points!')
+        elif user == 'chance_3':
+            print(
+                'Good effort from PLUE! \nYou figured me out on the third try. But I’m sad😟 because my battery is low. \nYou’ve scored 50 points')
+        else:
+            print("You are wrong. I am already sad, and you made me even more sad.\nTry Agian😔")
+    elif cop_emo == "angry":
+        user = angry(int(input("Enter 1 to receive your first clue:")))
+        if user == 'chance_1':
+            print(
+                'Congratulations from PLUE! \nGreat job finding me on the first try. But I’m angry😡 because I’m overloaded. \nYou got 100 points!')
+        elif user == 'chance_2':
+            print(
+                'Well done from PLUE! \nYou discovered me on the second attempt. But I’m angry😡 because I’m overloaded. \nYou’ve earned 75 points!')
+        elif user == 'chance_3':
+            print(
+                'Good effort from PLUE! \nYou figured me out on the third try. But I’m angry😡 because I’m overloaded. \nYou’ve scored 50 points!')
+        else:
+            print("You’re mistaken. I was already frustrated, and now you’ve made me even more irritated.\ntry Agian😔")
+
+
+def happy(a):
+    if a == 1:
+        clue_1 = r.choice(['Radiance', 'Sparkle', 'Glow', 'Breeze', 'Bloom'])
+        print(f"""Here is your first clue "{clue_1}" """)
+        a = int(input('If you have an answer, enter "0" to submit it, or enter "2" for the second clue:'))
+        if a == 2:
+            clue_2 = r.choice(['Inner peace', 'Quiet joy', 'Warm glow', 'Lighthearted moment', 'Gentle smile'])
+            print(f"""Here is your second clue "{clue_2}" """)
+            a = int(input('If you have an answer, enter "0" to submit it, or enter "3" for the second clue:'))
+            if a == 3:
+                clue_3 = r.choice(
+                    ['Heart full of joy', 'Feeling on top', 'Grinning from ear', 'Pure bliss moment', 'Full of cheer'])
+                print(f"""Here is your finall clue "{clue_3}" """)
+                output = (input("Find my emotion (happy/sad/angry):")).lower()
+                if output == "happy":
+                    return 'chance_3'
+                else:
+                    return 'fail'
+            else:
+                output = (input("Cool! Okay, say my emotion (happy/sad/angry):")).lower()
+                if output == "happy":
+                    return 'chance_2'
+                else:
+                    return 'fail'
+
+        else:
+            output = (input("Cool! Okay, say my emotion (happy/sad/angry):")).lower()
+            if output == "happy":
+                return 'chance_1'
+            else:
+                return 'fail'
+
+
+    else:
+        print('Enter valid number')
+
+
+def sad(b):
+    if b == 1:
+        clue_1 = r.choice(["Dullness", "Gloom", "Desolate", "Hollow", "Faded"])
+        print(f"""Here is your first clue "{clue_1}" """)
+        b = int(input('If you have an answer, enter "0" to submit it, or enter "2" for the second clue:'))
+        if b == 2:
+            clue_2 = r.choice(["Quiet sorrow", "Faint ache", "Hidden grief", "Silent longing", "Weary heart"])
+            print(f"""Here is your second clue "{clue_2}" """)
+            b = int(input('If you have an answer, enter "0" to submit it, or enter "3" for the second clue:'))
+            if b == 3:
+                clue_3 = r.choice(
+                    ["Lost in thought", "Fading sense of hope", "Quietly feeling down", "Heart feeling heavy",
+                     "Eyes full of sorrow", ])
+                print(f"""Here is your finall clue "{clue_3}" """)
+                output = (input("Find my emotion(happy/sad/angry):")).lower()
+                if output == "sad":
+                    return 'chance_3'
+                else:
+                    return 'fail'
+            else:
+                output = (input("cool ok say my feeling(happy/sad/angry):")).lower()
+                if output == "sad":
+                    return 'chance_2'
+                else:
+                    return 'fail'
+
+        else:
+            output = (input("cool ok say my feeling(happy/sad/angry):")).lower()
+            if output == "sad":
+                return 'chance_1'
+            else:
+                return 'fail'
+
+
+    else:
+        print('enter valid number')
+
+
+def angry(c):
+    if c == 1:
+        clue_1 = r.choice(["Tension", "Stir", "Fume", "Vexation", "Wrath"])
+        print(f"""Here is your first clue "{clue_1}" """)
+        c = int(input('If you have an answer, enter "0" to submit it, or enter "2" for the second clue:'))
+        if c == 2:
+            clue_2 = r.choice(
+                ["Quiet frustration", "Hidden fury", "Silent rage", "Stifled irritation", "Smoldering tension"])
+            print(f"""Here is your second clue "{clue_2}" """)
+            a = int(input('If you have an answer, enter "0" to submit it, or enter "3" for the second clue:'))
+            if c == 3:
+                clue_3 = r.choice(["Burning with frustration", "Clenching my fists", "Heart filled with rage",
+                                   "Seething under surface", "Gripping tight anger"])
+                print(f"""Here is your finall clue "{clue_3}" """)
+                output = (input("Find my emotion (happy/sad/angry):")).lower()
+                if output == "angry":
+                    return 'chance_3'
+                else:
+                    return 'fail'
+            else:
+                output = (input("cool ok say my feeling(happy/sad/angry):")).lower()
+                if output == "angry":
+                    return 'chance_2'
+                else:
+                    return 'fail'
+
+        else:
+            output = (input("cool ok say my feeling(happy/sad/angry):")).lower()
+            if output == "angry":
+                return 'chance_1'
+            else:
+                return 'fail'
+
+
+    else:
+        print('enter valid number')
+
+
+main()
